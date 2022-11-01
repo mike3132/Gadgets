@@ -1,0 +1,7 @@
+name: Gadgets
+version: '${project.version}'
+main: me.mike3132.gadgets.Main
+api-version: 1.19
+authors: [ Mike3132 ]
+description: Ragnarok Gadgets Menu
+website: https://www.ragnarok.icu
