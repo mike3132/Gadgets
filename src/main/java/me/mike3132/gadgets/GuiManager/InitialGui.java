@@ -39,7 +39,7 @@ public class InitialGui {
         balloonItem.setItemMeta(balloonMeta);
         balloonPane.addItem(new GuiItem(balloonItem, event -> {
             Player player = (Player) event.getWhoClicked();
-            ChestGui balloonGui = BalloonGui.createGui();
+            ChestGui balloonGui = BalloonGui.createGui(player);
             balloonGui.show(player);
         }));
         gui.addPane(balloonPane);

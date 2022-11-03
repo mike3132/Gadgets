@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class BalloonGui {
 
-    public static ChestGui createGui() {
+    public static ChestGui createGui(Player player) {
         ChestGui gui = new ChestGui(3, Main.chatColor("&cBalloons"));
         gui.setOnGlobalClick(event -> event.setCancelled(true));
 
@@ -35,18 +35,18 @@ public class BalloonGui {
         // Cow balloon item. This will be shown to the player and the lore will tell them if they have it unlocked.
 
         StaticPane cowPane = new StaticPane(0,0, 9, 3, Pane.Priority.HIGHEST);
-        ItemStack cowItem = CowBalloon.createCowItem();
+        ItemStack cowItem = CowBalloon.createCowItem(player);
 
         cowPane.addItem(new GuiItem(cowItem, event -> {
-            Player player = (Player) event.getWhoClicked();
+            Player playerClicker = (Player) event.getWhoClicked();
             if (!Balloons.balloonPlayers.containsKey(player)) {
-                Balloons.summonBalloon(player);
-                player.closeInventory();
-                player.sendMessage(Main.chatColor("&bSuccessfully summoned your &2Cow &aBalloon"));
+                Balloons.summonBalloon(playerClicker);
+                playerClicker.closeInventory();
+                playerClicker.sendMessage(Main.chatColor("&bSuccessfully summoned your &2Cow &aBalloon"));
             } else {
-                Balloons.removeBalloon(player);
-                player.closeInventory();
-                player.sendMessage(Main.chatColor("&bSuccessfully removed your &2Cow &aBalloon"));
+                Balloons.removeBalloon(playerClicker);
+                playerClicker.closeInventory();
+                playerClicker.sendMessage(Main.chatColor("&bSuccessfully removed your &2Cow &aBalloon"));
             }
 
         }), 0,0);

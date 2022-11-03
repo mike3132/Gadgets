@@ -12,12 +12,17 @@ import java.util.ArrayList;
 public class CowBalloon {
 
 
-    public static ItemStack createCowItem() {
+    public static ItemStack createCowItem(Player player) {
         ItemStack item = new ItemStack(Material.COW_SPAWN_EGG);
         ItemMeta meta = item.getItemMeta();
         meta.setDisplayName(Main.chatColor("&2Cow &aBalloon"));
         ArrayList<String> lore = new ArrayList<>();
         // Set lore
+        if (player.hasPermission("Example.Perm")) {
+            lore.add("This will show with perms");
+        } else {
+            lore.add("This will show without perms");
+        }
 
         meta.setLore(lore);
         item.setItemMeta(meta);
