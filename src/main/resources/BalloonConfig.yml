@@ -1,0 +1,28 @@
+#                                                 🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥
+#                                                   💻Ragnarok Gadgets Balloon Config💻
+#                                                   🔥Coded By Mike3132🔥
+#                                                   💻Ragnarok Gadgets Balloon Config💻
+#                                                 🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥
+
+#✍✍✍✍ This file handles all balloon related things.✍✍✍✍
+#✍✍✍✍ You can change anything here to be whatever custom stuff you want.✍✍✍✍
+#☠☠☠☠ DO NOT CHANGE THE "Messages:" line as this will break the plugin.☠☠☠☠
+
+#Cow balloon placeholders.
+Cow-Balloon-Name: '&2Cow &aBalloon'
+
+#This is the lore that will be shown IN THE GUI  to the player if they do have permission to use the balloon
+Has-Cow-Balloon-Use-Permission:
+  - '&2This will show with perms'
+
+#This is the lore that will be shown IN THE GUI to the player if they do NOT have permission to use the balloon
+No-Cow-Balloon-Use-Permission:
+  - '&4This will show without perms'
+
+
+#See config.yml for permissions, and other plugin configurations
+#♏ If you have any questions please join my discord, open a support ticket and @Mike3132
+#♏ https://discord.gg/EHm6Ra3K
+#♏ Thanks for downloading and have a wonderful day
+#♛♛♛♛♛ End of messages.yml ♛♛♛♛♛
+#This is the default file,

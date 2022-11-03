@@ -1,0 +1,30 @@
+#                                                 🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥
+#                                                   💻Ragnarok Gadgets Config💻
+#                                                   🔥Coded By Mike3132🔥
+#                                                   💻Ragnarok Gadgets Config💻
+#                                                 🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥🖥
+
+Version: 'Version 1.0'
+ConfigVersion: '1.0'
+##### WARNING: DO NOT CHANGE ANYTHING ABOVE THIS LINE IT WILL BREAK THE PLUGIN!#####
+
+#✍✍✍✍✍Permissions✍✍✍✍✍
+#Gadgets.Menu > Access to main gadgets menu
+#Gadgets.Reload > Access to reload the configuration files
+#
+#
+#All balloons have a permission node that follows this format Gadgets.Balloon.enterMobNameHere
+#You can also use the following wildcard permissions
+#Gadgets.Balloon.* > Access to all balloons
+#Gadgets.Balloon.Passive.* > Access to all balloons that are made of passive mobs
+#Gadgets.Balloon.Hostile.* > Access to all balloons that are made of hostile mobs
+#✍✍✍✍✍Permissions✍✍✍✍✍
+
+
+#See messages.yml for all configurable plugin messages
+#♏ If you have any questions please join my discord, open a support ticket and @Mike3132
+#♏ https://discord.gg/EHm6Ra3K
+#♏ Thanks for downloading and have a wonderful day
+
+#♛♛♛♛♛ END OF CONFIG ♛♛♛♛♛
+#This is the default file.
