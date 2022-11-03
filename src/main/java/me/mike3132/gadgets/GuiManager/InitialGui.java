@@ -20,11 +20,11 @@ public class InitialGui {
 
         OutlinePane backgroundPane = new OutlinePane(0,0,9,6, Pane.Priority.LOWEST);
         ItemStack item = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName(" ");
-        meta.addEnchant(Enchantment.LUCK, 10, true);
-        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        item.setItemMeta(meta);
+        ItemMeta itemMeta = item.getItemMeta();
+        itemMeta.setDisplayName(" ");
+        itemMeta.addEnchant(Enchantment.LUCK, 10, true);
+        itemMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        item.setItemMeta(itemMeta);
         backgroundPane.addItem(new GuiItem(new ItemStack(item)));
         backgroundPane.setRepeat(true);
 
@@ -39,7 +39,8 @@ public class InitialGui {
         balloonItem.setItemMeta(balloonMeta);
         balloonPane.addItem(new GuiItem(balloonItem, event -> {
             Player player = (Player) event.getWhoClicked();
-            player.sendMessage("You clicked the lead?");
+            ChestGui balloonGui = BalloonGui.createGui();
+            balloonGui.show(player);
         }));
         gui.addPane(balloonPane);
 

@@ -2,11 +2,13 @@ package me.mike3132.gadgets.CommandManager;
 
 import com.github.stefvanschie.inventoryframework.gui.type.ChestGui;
 import me.mike3132.gadgets.GuiManager.InitialGui;
+import me.mike3132.gadgets.ItemManager.CowBalloon;
 import me.mike3132.gadgets.Main;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 
 public class Gadgets implements CommandExecutor {
 
@@ -25,12 +27,10 @@ public class Gadgets implements CommandExecutor {
                 player.sendMessage("Not enough permission");
                 return false;
             }
-            if (!args[0].equalsIgnoreCase("Menu")) {
-                player.sendMessage("This is not a menu command");
-                return false;
+            if (args[0].equalsIgnoreCase("Menu")) {
+                ChestGui gui = InitialGui.createGui();
+                gui.show(player);
             }
-            ChestGui gui = InitialGui.createGui();
-            gui.show(player);
         } else {
             player.sendMessage("Not enough args");
         }

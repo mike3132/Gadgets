@@ -11,24 +11,24 @@ import org.bukkit.util.Vector;
 import java.util.HashMap;
 
 public class Balloons {
-    public static HashMap<Player, Cow> balloons = new HashMap<>();
+    public static HashMap<Player, Cow> balloonPlayers = new HashMap<>();
 
 
     public static void summonBalloon(Player player) {
         Location location = player.getLocation();
-        Location playerLocationModified = player.getLocation().add(1, 3, -1);
+        Location playerLocationModified = player.getLocation().add(0, 3, 0);
         Cow cow = (Cow) playerLocationModified.getWorld().spawnEntity(playerLocationModified, EntityType.COW);
         cow.setLeashHolder(player);
         cow.setInvulnerable(true);
         cow.setSilent(true);
         cow.setBaby();
-        balloons.put(player, cow);
+        balloonPlayers.put(player, cow);
 
-        Vector vector = location.getDirection().normalize().multiply(1).add(new Vector(1, 3, -1));
+        Vector vector = location.getDirection().normalize().multiply(1).add(new Vector(0, 3, 0));
         new BukkitRunnable() {
             @Override
             public void run() {
-                if (balloons.containsKey(player)) {
+                if (balloonPlayers.containsKey(player)) {
                     cow.teleport(player.getLocation().clone().add(vector));
                 }
             }
@@ -36,9 +36,9 @@ public class Balloons {
     }
 
     public static void removeBalloon(Player player) {
-        if (balloons.containsKey(player)) {
-            Cow cow = balloons.get(player);
-            balloons.remove(player);
+        if (balloonPlayers.containsKey(player)) {
+            Cow cow = balloonPlayers.get(player);
+            balloonPlayers.remove(player);
             cow.remove();
         }
     }
