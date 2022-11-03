@@ -2,6 +2,7 @@ package me.mike3132.gadgets.BalloonsManager;
 
 import me.mike3132.gadgets.Main;
 import org.bukkit.Location;
+import org.bukkit.Particle;
 import org.bukkit.entity.Cow;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -45,6 +46,7 @@ public class Balloons {
             Cow cow = balloonPlayers.get(player);
             balloonPlayers.remove(player);
             cow.remove();
+            cow.getWorld().spawnParticle(Particle.CLOUD, cow.getLocation().add(0,0,0), 10,0,0, 0);
         }
     }
 }
