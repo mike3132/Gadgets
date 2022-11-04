@@ -19,6 +19,14 @@ Has-Cow-Balloon-Use-Permission:
 No-Cow-Balloon-Use-Permission:
   - '&4This will show without perms'
 
+#This is the lore that will be shown IN THE GUI  to the player if they do have permission to use the balloon
+Has-Glow-Squid-Permission:
+  - '&2This will show with perms'
+
+#This is the lore that will be shown IN THE GUI to the player if they do NOT have permission to use the balloon
+No-Glow-Squid-Permission:
+  - '&4This will show without perms'
+
 
 #See config.yml for permissions, and other plugin configurations
 #♏ If you have any questions please join my discord, open a support ticket and @Mike3132

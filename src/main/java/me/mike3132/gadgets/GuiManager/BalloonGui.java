@@ -5,9 +5,11 @@ import com.github.stefvanschie.inventoryframework.gui.type.ChestGui;
 import com.github.stefvanschie.inventoryframework.pane.OutlinePane;
 import com.github.stefvanschie.inventoryframework.pane.Pane;
 import com.github.stefvanschie.inventoryframework.pane.StaticPane;
-import me.mike3132.gadgets.BalloonsManager.Balloons;
+import me.mike3132.gadgets.BalloonGuiItemManager.CowBalloonItem;
+import me.mike3132.gadgets.BalloonGuiItemManager.GlowSquidBalloonItem;
+import me.mike3132.gadgets.BalloonsManager.CowBalloon;
+import me.mike3132.gadgets.BalloonsManager.GlowSquidBalloon;
 import me.mike3132.gadgets.ChatManager.Messages;
-import me.mike3132.gadgets.BalloonGuiItemManager.CowBalloon;
 import me.mike3132.gadgets.Main;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -31,11 +33,9 @@ public class BalloonGui {
 
         gui.addPane(backgroundPane);
 
-        // Cow balloon item. This will be shown to the player and the lore will tell them if they have it unlocked.
-
+        // Cow balloon item.
         StaticPane cowPane = new StaticPane(0, 0, 9, 3, Pane.Priority.HIGHEST);
-        ItemStack cowItem = CowBalloon.createCowItem(player);
-
+        ItemStack cowItem = CowBalloonItem.createCowItem(player);
         cowPane.addItem(new GuiItem(cowItem, event -> {
             Player playerClicker = (Player) event.getWhoClicked();
             if (!playerClicker.hasPermission("Gadgets.Balloon.Cow") ||
@@ -44,19 +44,40 @@ public class BalloonGui {
                 event.setCancelled(true);
                 return;
             }
-            if (!Balloons.balloonPlayers.containsKey(player)) {
-                Balloons.summonBalloon(playerClicker);
-                playerClicker.closeInventory();
+            if (!CowBalloon.cowBalloonPlayers.containsKey(player)) {
+                CowBalloon.summonBalloon(playerClicker);
                 Messages.sendMessage(playerClicker, "Balloon-Summon-Message");
             } else {
-                Balloons.removeBalloon(playerClicker);
-                playerClicker.closeInventory();
+                CowBalloon.removeBalloon(playerClicker);
                 Messages.sendMessage(playerClicker, "Balloon-Despawn-Message");
             }
 
         }), 0, 0);
-
         gui.addPane(cowPane);
+
+        // Glow squid balloon item.
+        StaticPane glowSquidPane = new StaticPane(0,0,9,3, Pane.Priority.HIGHEST);
+        ItemStack glowSquidItem = GlowSquidBalloonItem.createGlowSquidItem(player);
+        glowSquidPane.addItem(new GuiItem(glowSquidItem, event -> {
+            Player playerClicker = (Player) event.getWhoClicked();
+            if (!playerClicker.hasPermission("Gadgets.Balloon.GlowSquid") ||
+                    !playerClicker.hasPermission("Gadgets.Balloon.Passive") ||
+                    !playerClicker.hasPermission("Gadgets.Balloon.*")) {
+                event.setCancelled(true);
+                return;
+            }
+            if (!GlowSquidBalloon.glowSquidBalloonPlayers.containsKey(player)) {
+                GlowSquidBalloon.summonBalloon(playerClicker);
+                Messages.sendMessage(playerClicker, "Balloon-Summon-Message");
+            } else {
+                GlowSquidBalloon.removeBalloon(playerClicker);
+                Messages.sendMessage(player, "Balloon-Despawn-Message");
+            }
+
+        }), 1, 0);
+        gui.addPane(glowSquidPane);
+
+
 
         return gui;
     }

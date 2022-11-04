@@ -25,8 +25,9 @@ Messages:
   Not-Enough-Command-Args: "&aNot enough command arguments"
 
   ###BALLOON MESSAGES###
-  #This is sent to the player if they try and remove their lead from their balloon.
-  No-Lead-Event: '&3Sorry you cannot unleash your balloon'
+
+  #Sent to the player if they try and right click on a mob while having a balloon out.
+  No-Right-Click-With-Balloon: "&4Sorry your hands are full with balloons, Please remove them first"
 
   #This is sent to the player when they summon a balloon
   Balloon-Summon-Message: '&bYour balloon has now been inflated'
@@ -34,6 +35,11 @@ Messages:
   #This is sent to the player when they despawn a balloon
   Balloon-Despawn-Message: '&4Your balloon has popped :('
 
+  #This is sent when a player sets their mob to a baby
+  Balloon-Change-To-Baby: '&dYour balloon has lost some air'
+
+  #This is sent when a player sets their mob to an adult
+  Balloon-Change-To-Adult: '&bYour balloon has gained some air'
 
 
 

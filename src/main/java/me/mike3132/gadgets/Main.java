@@ -1,14 +1,12 @@
 package me.mike3132.gadgets;
 
-import me.mike3132.gadgets.BalloonsManager.Balloons;
 import me.mike3132.gadgets.CommandManager.Gadgets;
-import me.mike3132.gadgets.EventManager.BalloonEvents;
+import me.mike3132.gadgets.EventManager.CowBalloonEvents;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -28,7 +26,7 @@ public final class Main extends JavaPlugin {
         getServer().getConsoleSender().sendMessage(chatColor("&a[&2Gadgets&a] " + "&2&lENABLED"));
 
         // Event Register
-        Bukkit.getPluginManager().registerEvents(new BalloonEvents(), this);
+        Bukkit.getPluginManager().registerEvents(new CowBalloonEvents(), this);
 
         // Command loader
         registerGive();
