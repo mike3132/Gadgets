@@ -2,6 +2,7 @@ package me.mike3132.gadgets.CommandManager;
 
 import com.github.stefvanschie.inventoryframework.gui.type.ChestGui;
 import me.mike3132.gadgets.ChatManager.Messages;
+import me.mike3132.gadgets.GuiManager.BabyBalloonGui;
 import me.mike3132.gadgets.GuiManager.InitialGui;
 import me.mike3132.gadgets.Main;
 import org.bukkit.command.Command;
@@ -41,6 +42,10 @@ public class Gadgets implements CommandExecutor {
                 }
                 Main.plugin.reloadConfig();
                 sender.sendMessage(Main.chatColor("&a[&2Gadgets&a] " + "&6Config reloaded in &2" + String.valueOf(System.currentTimeMillis() - 1 + " &6ms")));
+                break;
+            case "MODIFY":
+                ChestGui gui1 = BabyBalloonGui.createGui();
+                gui1.show(player);
                 break;
             default:
                 Messages.sendMessage(player, "Not-Enough-Command-Args");
