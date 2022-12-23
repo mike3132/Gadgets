@@ -11,7 +11,7 @@ ConfigVersion: '1.0'
 #✍✍✍✍✍Permissions✍✍✍✍✍
 #Gadgets.Menu > Access to main gadgets menu
 #Gadgets.Reload > Access to reload the configuration files
-#.
+#
 #
 #All balloons have a permission node that follows this format Gadgets.Balloon.enterMobNameHere
 #You can also use the following wildcard permissions
